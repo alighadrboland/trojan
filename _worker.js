@@ -1,7 +1,8 @@
 // src/worker.js
 import { connect } from "cloudflare:sockets";
 let sha224Password = '156957625a7b5066506652d122fc157d667ba7ba8f6963ca2af71819';
-let proxyIP = ['pa.alighadrboland.ir']; // const proxyIPs = ['cdn-all.xn--b6gac.eu.org', 'cdn.xn--b6gac.eu.org', 'cdn-b100.xn--b6gac.eu.org', 'edgetunnel.anycast.eu.org', 'cdn.anycast.eu.org'];
+const proxyIPs = ['cdn-all.xn--b6gac.eu.org','cdn.xn--b6gac.eu.org','workers.cloudflare.cyou','edgetunnel.anycast.eu.org','workers.bestip.one','proxyip.aliyun.fxxk.dedyn.io','proxyip.vultr.fxxk.dedyn.io','proxyip.multacom.fxxk.dedyn.io'];
+let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)]; // const proxyIPs = ['cdn-all.xn--b6gac.eu.org', 'cdn.xn--b6gac.eu.org', 'cdn-b100.xn--b6gac.eu.org', 'edgetunnel.anycast.eu.org', 'cdn.anycast.eu.org'];
 const worker_default = {
     /**
      * @param {import("@cloudflare/workers-types").Request} request
