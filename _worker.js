@@ -1,7 +1,24 @@
 // src/worker.js
 import { connect } from "cloudflare:sockets";
-let sha224Password = '156957625a7b5066506652d122fc157d667ba7ba8f6963ca2af71819';
-let proxyIP =['pa.alighadrboland.ir'];
+let shaPassword = '156957625a7b5066506652d122fc157d667ba7ba8f6963ca2af71819';
+const proxyIPs = [
+    'pa.alighadrboland.ir',
+	'cf.090227.xyz:443',
+	'time.is',
+	'www.visa.com.sg',
+	'skk.moe',
+	'www.wto.org:8443',
+	'www.csgo.com:2087',
+	'icook.hk',
+	'104.17.152.41',
+        'dnschecker.org' ,
+        'tasteatlas.com',
+         'ip.sb',
+	 'workers.cloudflare.cyou',
+	'[2606:4700:e7:25:4b9:f8f8:9bfb:774a]',
+];
+let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
+let socks5Address = '';
 const worker_default = {
     /**
      * @param {import("@cloudflare/workers-types").Request} request
